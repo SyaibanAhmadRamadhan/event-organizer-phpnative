@@ -51,6 +51,8 @@ if (isset($_POST['login'])){
   <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+
+  
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">

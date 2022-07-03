@@ -1,9 +1,6 @@
 <?php
 session_start();
 $koneksi = mysqli_connect('localhost', 'root', '', 'semester2');
-if (!$_SESSION['login']){
-  header('location: login.php');
-}
 
 $kelas = mysqli_query($koneksi,"SELECT * FROM kegiatan");
 $kelasArray = [];
@@ -52,34 +49,8 @@ while ($kelasAssoc = mysqli_fetch_assoc($kelas)){
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-      <a href="#hero" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span>X-Tech</span>
-      </a>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#pricing">Kelas</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="#blog">Blog</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <?php if($_SESSION['login']) { ?>
-            <li><a class="nav-link scrollto" href=""><?php echo $_SESSION['username']?></a></li>
-          <li><a class="getstarted scrollto" href="logout.php">logout</a></li>
-          <?php } else { ?>
-            <li><a class="getstarted scrollto" href="login.php">login</a></li>
-            <?php } ?>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
+  <?php include './components/header.php';?>
+  <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex align-items-center">
@@ -159,7 +130,7 @@ while ($kelasAssoc = mysqli_fetch_assoc($kelas)){
           <br>
           <li>Rp. <?php echo number_format($x['harga_tiket'])?></li>
         </ul>
-        <a href="kelas_javascript.php?id=<?php echo $x['id']?>" class="btn-buy">Coba Sekarang</a>
+        <a href="kelas.php?id=<?php echo $x['id']?>" class="btn-buy">Coba Sekarang</a>
       </div>
     </div>
 
@@ -467,78 +438,7 @@ while ($kelasAssoc = mysqli_fetch_assoc($kelas)){
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-    
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-5 col-md-12 footer-info">
-            <a href="#hero" class="logo d-flex align-items-center">
-              <img src="assets/img/logo.png" alt="">
-              <span>X-Tech</span>
-            </a>
-            <p>Dengan adanya event ini, kami harap kedepannya banyak mahasiswa yang semangat belajar lebih giat lagi agar luasnya peluang untuk mendapatkan pekerjaan yang layak.</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-2 col-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-            <h4>Contact Us</h4>
-            <p>
-            Rafly Alhakim <br>
-            JL.Mekar Wangi<br>
-              Komplek Pertanian Atsiri<br><br>
-              <strong>Phone:</strong> +62 882 1386 0108<br>
-              <strong>Email:</strong> raflyalhakim207@gmail.com<br>
-            </p>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="copyright">
-        &copy;<strong><span>X-Tech</span></strong>.
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-      </div>
-    </div>
-  </footer><!-- End Footer -->
+  <?php include './components/footer.php'?>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
