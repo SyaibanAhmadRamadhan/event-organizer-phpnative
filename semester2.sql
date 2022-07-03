@@ -41,11 +41,6 @@ CREATE TABLE `daftar` (
 -- Dumping data untuk tabel `daftar`
 --
 
-INSERT INTO `daftar` (`id`, `tanggal_daftar`, `alasan`, `users_id`, `kegiatan_id`, `kategori_peserta_id`, `nosertifikat`) VALUES
-(23, '2022-07-03', 'suka aja', 5, 1, 4, 'S-2022-VI-001'),
-(24, '2022-07-03', 'suka aja', 5, 1, 4, 'S-2022-VI-002'),
-(25, '2022-07-03', 'suka aja', 5, 2, 4, 'S-2022-VI-001');
-
 -- --------------------------------------------------------
 
 --
@@ -115,10 +110,6 @@ CREATE TABLE `kegiatan` (
 -- Dumping data untuk tabel `kegiatan`
 --
 
-INSERT INTO `kegiatan` (`id`, `judul`, `kapasitas`, `harga_tiket`, `tanggal`, `narasumber`, `tempat`, `pic`, `foto_flyer`, `deskripsi`, `jenis_id`) VALUES
-(1, 'Seminar Sukses Kuliah di Luar Negeri', 100, 25000, '2022-06-30', 'Dr. Seto Waluyo, Dr. Annisa PhD, Misna Azqia M.Kom', 'Aula Kampus B2 STT-NF', 'ahmad fathan', 'seminar1.png', 'Apakah kamu ingin berpindah karir menjadi UI/UX Designer dan memulai dari awal hingga mahir? Apakah kamu ingin menjadi UI/UX Designer yang siap kerja? Apakah kamu seorang UI/UX Designer yang ingin menambah skills? Kelas ini cocok untuk kamu!', 1),
-(2, 'Seminar KEREN', 10, 25000, '2022-07-02', 'Dr. Annisa PhD, Misna Azqia M.Kom', 'Aula Kampus B2 STT-BINUS', 'ahmad fathan', 'seminar2.png', 'Pada kelas PHP Intermediate ini, kamu akan mendalami materi lanjutan dari kelas PHP Dasar. PHP Intermediate banyak membahas topik-topik penting yang pastinya akan bisa langsung diimplementasikan pada proyek aplikasi kamu', 3);
-
 -- --------------------------------------------------------
 
 --
@@ -140,10 +131,6 @@ CREATE TABLE `users` (
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `email`, `created_at`, `last_login`, `status`, `role`) VALUES
-(1, 'admin', '827ccb0eea8a706c4c34a16891f84e7b', 'admin@gmail.com', '2022-06-12 00:07:42', '2022-07-03 09:05:21', 1, 'administrator'),
-(2, 'aminah', '90b74c589f46e8f3a484082d659308bd', 'aminah@gmail.com', '2022-06-12 00:07:44', '2022-07-03 09:05:21', 1, 'public'),
-(5, 'rama', '$2y$10$aIB/IrDMb.eUc9KVY/Ug3OG/ElsCbqLtM3MAxXtdhJ6recP7qldMq', 'rama@gmail.com', '2022-07-02 15:10:42', '2022-07-03 09:05:21', 1, 'public');
 
 --
 -- Indexes for dumped tables
@@ -226,15 +213,15 @@ ALTER TABLE `users`
 -- Ketidakleluasaan untuk tabel `daftar`
 --
 ALTER TABLE `daftar`
-  ADD CONSTRAINT `fk_daftar_kategori_peserta1` FOREIGN KEY (`kategori_peserta_id`) REFERENCES `kategori_peserta` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_pesanan_produk1` FOREIGN KEY (`kegiatan_id`) REFERENCES `kegiatan` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_pesanan_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_daftar_kategori_peserta1` FOREIGN KEY (`kategori_peserta_id`) REFERENCES `kategori_peserta` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_pesanan_produk1` FOREIGN KEY (`kegiatan_id`) REFERENCES `kegiatan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_pesanan_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `kegiatan`
 --
 ALTER TABLE `kegiatan`
-  ADD CONSTRAINT `fk_produk_jenis_produk` FOREIGN KEY (`jenis_id`) REFERENCES `jenis_kegiatan` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_produk_jenis_produk` FOREIGN KEY (`jenis_id`) REFERENCES `jenis_kegiatan` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

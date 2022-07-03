@@ -18,6 +18,9 @@ if(isset($_POST['order'])){
     $id_user = $_SESSION['id_user'];
     $alasan = $_POST['alasan'];
     $idKelas= $_GET['idKegiatan'];
+    $jenis = mysqli_query($koneksi,"SELECT * FROM jenis_kegiatan");
+    $jenisArray = mysqli_fetch_assoc($jenis);
+    $idjenis = $jenisArray["id"];
     $query = mysqli_query($koneksi, "SELECT max(right(nosertifikat, 3)) as no_sertifikat FROM daftar WHERE kegiatan_id=$idKelas");
     if (mysqli_num_rows($query) > 0) {
       foreach ($query as $qq) {
@@ -27,15 +30,15 @@ if(isset($_POST['order'])){
      } else {
       $kd = "001";
      }
-     if ($idKelas == 1){
+     if ($idjenis == 1){
       $huruf = "S-2022-VI-";
-     }elseif ($idKelas == 2){
+     }elseif ($idjenis == 2){
       $huruf = "W-2022-VI-";
-     }elseif ($idKelas == 3) {
+     }elseif ($idjenis == 3) {
       $huruf = "E-2022-VI-";
-     }elseif ($idKelas == 4){
+     }elseif ($idjenis == 4){
       $huruf = "B-2022-VI-";
-     }elseif ($idKelas == 5) {
+     }elseif ($idjenis == 5) {
       $huruf = "P-2022-VI-";
      }
    

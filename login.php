@@ -5,17 +5,29 @@ $koneksi = mysqli_connect('localhost', 'root', '', 'semester2');
 if (isset($_POST['login'])){
   $email = $_POST['email'];
   $password = $_POST['password'];
-  $usernameQuery = mysqli_query($koneksi,"SELECT * FROM users WHERE email='$email' && role = 'public'");
+  $usernameQuery = mysqli_query($koneksi,"SELECT * FROM users WHERE email='$email'");
   if (mysqli_num_rows($usernameQuery)>0){
     $usernameArray = mysqli_fetch_assoc($usernameQuery);
     if (password_verify($password,$usernameArray['password'])){
-        $_SESSION['id_user']=$usernameArray['id'];
+      $id = $usernameArray['id'];
+      $role = $usernameArray['role'];
+        $updateUser = mysqli_query($koneksi,"UPDATE users SET last_login = current_timestamp WHERE id = $id");
+        if ($role=='administrator'){
+          $_SESSION['id_admin']=$usernameArray['id'];
+          $_SESSION['email']=$email;
+          $_SESSION['username_admin']=$usernameArray['username'];
+          $_SESSION['admin']=true;
+          header("Location:admin_kegiatan/admin/index.php");
+          exit;
+        }else  {
+          $_SESSION['id_user']=$usernameArray['id'];
         $_SESSION['email']=$email;
         $_SESSION['username']=$usernameArray['username'];
         $_SESSION['login']=true;
-        $updateUser = mysqli_query($koneksi,'UPDATE users SET last_login = current_timestamp');
-        header("Location:index.php");
-        exit;
+          header("Location:index.php");
+          exit;
+        }
+        
     }else {
       echo "<script>alert('password tidak sama');
       document.location.href='register.php'</script>";

@@ -86,7 +86,7 @@ $result = mysqli_num_rows($kegiatan)
           </div>
         </div>
         <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-          <img src="assets/img/<?php echo $x['foto_flyer'];?>" class="#" alt="">
+          <img src="assets/imgKegiatanDariDatabase/<?php echo $x['foto_flyer'];?>" class="#" alt="">
         </div>
       </div>
     </div>

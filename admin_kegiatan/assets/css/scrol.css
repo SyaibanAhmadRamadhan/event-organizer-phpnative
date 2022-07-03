@@ -1,0 +1,34 @@
+
+	table.scroll {
+    /* untuk ukuran keseluruhan table */
+		width:1077px;
+		border:0px #a9c6c9 solid;
+	}
+
+  /* untuk header nya biar tertata didalam table */
+	table.scroll thead {
+    /* displat table untuk ngasih tau ke si class bahwa ini table yang memiliki banyak header*/
+		display:table;
+    /* ukuran headernya dari ujung sampe ujung */
+		width:1077px;
+		/* background-color: salmon; */
+	}
+
+  /* ini untuk body table nya */
+	table.scroll tbody {
+    /* ngasih tau mau berapa ukuran tablenya untuk kebawah */
+		height:400px;
+    /* overflow bertujuan agar si headernya tetep diatas */
+		overflow:auto;
+    /* ngasih tau bahwsannya banyak didalam tbody ada banyak tr yang harus nyesuaiin dengan headernya */
+		float:left;
+    /* untuk ukuran tbody nya dari ujung ke ujung */
+		width:1077px;
+	}
+
+    table.scroll th, td {
+		/* width:1077; */
+    /* untuk ngasih kotak besar pada headernya */
+		padding:8px;
+	}
+

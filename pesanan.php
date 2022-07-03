@@ -52,7 +52,8 @@ $id_user = $_SESSION['id_user'];
             $idkategoriPeserta = $order_array['kategori_peserta_id'];
             $kelasQuery = mysqli_query($koneksi,"SELECT * FROM kegiatan WHERE id = $idKelas" );
             $kelasArray = mysqli_fetch_assoc($kelasQuery);
-            $jenisKegiatanQuery = mysqli_query($koneksi,"SELECT * FROM jenis_kegiatan WHERE id = $idKelas");
+            $jenis = $kelasArray['jenis_id'];
+            $jenisKegiatanQuery = mysqli_query($koneksi,"SELECT * FROM jenis_kegiatan WHERE id = $jenis");
             $jenisKegiatanArray = mysqli_fetch_assoc($jenisKegiatanQuery);
 
    ?>

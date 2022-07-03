@@ -2,11 +2,7 @@
 session_start();
 $koneksi = mysqli_connect('localhost', 'root', '', 'semester2');
 
-$kelas = mysqli_query($koneksi,"SELECT * FROM kegiatan");
-$kelasArray = [];
-while ($kelasAssoc = mysqli_fetch_assoc($kelas)){
-  $kelasArray[]=$kelasAssoc;
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -115,22 +111,23 @@ while ($kelasAssoc = mysqli_fetch_assoc($kelas)){
   </header>
 
   <div class="row gy-4" data-aos="fade-left">
-<?php foreach ($kelasArray as $x ) { 
-      $idKelas = $x['id'];
+<?php $kelas = mysqli_query($koneksi,"SELECT * FROM kegiatan");
+while ($kelasAssoc = mysqli_fetch_assoc($kelas)){
+      $idKelas = $kelasAssoc['jenis_id'];
     $queryJenis = mysqli_query($koneksi,"SELECT * FROM jenis_kegiatan WHERE id = $idKelas");
     $jenisArray = mysqli_fetch_assoc($queryJenis);
     ?>
     <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
       <div class="box">
       <span class="featured"><?php echo $jenisArray['nama']?></span>
-        <h3 style="color: #07d5c0;"><?php echo $x['judul']?></h3>
-        <img src="assets/img/<?php echo $x['foto_flyer']?>" class="img-fluid" alt="">
+        <h3 style="color: #07d5c0;"><?php echo $kelasAssoc['judul']?></h3>
+        <img src="assets/imgKegiatanDariDatabase/<?php echo $kelasAssoc['foto_flyer']?>" class="img-fluid" alt="">
         <ul>
-        <li><?php echo $x['narasumber']?></li>
+        <li><?php echo $kelasAssoc['narasumber']?></li>
           <br>
-          <li>Rp. <?php echo number_format($x['harga_tiket'])?></li>
+          <li>Rp. <?php echo number_format($kelasAssoc['harga_tiket'])?></li>
         </ul>
-        <a href="kelas.php?id=<?php echo $x['id']?>" class="btn-buy">Coba Sekarang</a>
+        <a href="kelas.php?id=<?php echo $kelasAssoc['id']?>" class="btn-buy">Coba Sekarang</a>
       </div>
     </div>
 
