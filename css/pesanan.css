@@ -1,0 +1,97 @@
+:root {
+    --red: #e74c3c;
+    --black: #333;
+    --white: #fff;
+    --light-bg: #f5f5f5;
+    --light-color: #666;
+    --border: .1rem solid var(var(--light-color));
+    --border-black: .2rem solid var(--black);
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+* {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+}
+
+body {
+    overflow-x: hidden;
+    background: var(--light-bg);
+}
+
+/* .bg-body {
+    background: url(../img/imgslide/home.jpg);
+} */
+
+section {
+    padding: 2rem;
+    margin: 0 auto;
+
+}
+
+/* order */
+.orders {
+    max-width: 1200px;
+}
+
+.orders .box-container-pesanan {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+
+}
+
+.orders .box-container-pesanan .box {
+    padding: 1rem 2rem;
+    flex: 1 1 40rem;
+    border: black;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+}
+
+.orders .box-container-pesanan .box p {
+    margin: .5rem 0;
+    line-height: 1.8;
+    font-size: 2rem;
+    color: var(--light-color);
+}
+
+.orders .box-container-pesanan .box p span {
+    color: var(--main-color);
+}
+
+.heading-pesanan {
+    font-size: 4rem;
+    color: var(--black);
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.empty {
+    padding: 1.5rem;
+    background-color: var(--white);
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    color: var(--red);
+    border-radius: .5rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+}

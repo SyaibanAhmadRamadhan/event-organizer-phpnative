@@ -16,7 +16,7 @@
           <li><a class="nav-link scrollto" href="index.php#team">Team</a></li>
           <li><a class="nav-link scrollto" href="index.php#blog">Blog</a></li>
           <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
-            <li><a class="nav-link scrollto" href=""><?php echo $_SESSION['username']?></a></li>
+            <li><a class="nav-link scrollto" href="pesanan.php"><?php echo $_SESSION['username']?></a></li>
           <li><a class="getstarted scrollto" href="./logout.php">logout</a></li>
           <?php } else { ?>
             <li><a class="nav-link scrollto active" href="index.php#hero">Home</a></li>

@@ -6,6 +6,12 @@ if(!isset($_SESSION['login'])){
 }
 $id_user = $_SESSION['id_user'];
 $idKelas= $_GET['idKegiatan'];
+$queryKelas = mysqli_query($koneksi,"SELECT * FROM daftar WHERE users_id = $id_user && kegiatan_id = $idKelas");
+if (mysqli_num_rows($queryKelas)>0){
+   echo "<script>alert('anda telah melakukan pemesanan seminar ini');
+        document.location.href='index.php#pricing'</script>";
+        exit;
+}
 if(isset($_POST['order'])){
    date_default_timezone_set('Asia/Jakarta');
     $id_kategoripeserta = $_POST['kategoriPeserta'];
@@ -21,7 +27,18 @@ if(isset($_POST['order'])){
      } else {
       $kd = "001";
      }
-   $huruf = "S-2022-VI-";
+     if ($idKelas == 1){
+      $huruf = "S-2022-VI-";
+     }elseif ($idKelas == 2){
+      $huruf = "W-2022-VI-";
+     }elseif ($idKelas == 3) {
+      $huruf = "E-2022-VI-";
+     }elseif ($idKelas == 4){
+      $huruf = "B-2022-VI-";
+     }elseif ($idKelas == 5) {
+      $huruf = "P-2022-VI-";
+     }
+   
    $nosertifikat = $huruf.$kd;
     $tanggal = date("Y-m-d h:i:s");
     $true = mysqli_query($koneksi,"INSERT INTO daftar (
@@ -29,7 +46,7 @@ if(isset($_POST['order'])){
       VALUES ('', '$tanggal', '$alasan', $id_user, $idKelas, $id_kategoripeserta, '$nosertifikat')");
       if($true){
          echo "<script>alert('Pemesanan berhasil');
-        document.location.href='index.php'</script>";
+        document.location.href='pesanan.php'</script>";
       }else {
          echo "<script>alert('pendaftaran gagal);document.location.href='index.php'</script>";
       }
@@ -86,7 +103,7 @@ if(isset($_POST['order'])){
       <div class="flex">
          <div class="inputBox">
             <span>ALASAN :</span>
-            <input type="text" name="alasan" placeholder="alasan daftar" class="box" maxlength="20" required>
+            <input type="text" name="alasan" placeholder="alasan daftar" class="box" required>
          </div>
          <div class="inputBox">
             <span>kategori peserta:</span>
