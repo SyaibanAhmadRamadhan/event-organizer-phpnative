@@ -41,6 +41,10 @@ $user = mysqli_query($koneksi,"SELECT * FROM users WHERE id=$id");
                 <th>last login user</th>
                 <td><?php echo $x['last_login'];?></td>
             </tr>
+            <tr>
+                <th>last login user</th>
+                <td><?php echo $x['status'];?></td>
+            </tr>
         </table>
         <?php 
         $daftar = mysqli_query($koneksi,"SELECT * FROM daftar WHERE users_id = $idUser");
