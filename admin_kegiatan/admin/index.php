@@ -66,15 +66,21 @@ if(!isset($_SESSION['admin'])){
                 <ul class="nav side-menu ">
                 <li> <a href="index.php?page=dashboard"> <i class="fa fa-dashboard"></i> Dashboard <span class="fa fa-chevron"> </span> </a> </li>
                   <li> <a href="index.php?page=home"> <i class="fa fa-building"></i> Company Profile <span class="fa fa-chevron"> </span> </a> </li>
-                  <li> <a href="javascript:void(0)"><i class="fa fa-bicycle"> </i> Barang <span class="fa fa-chevron-down"> </span ></a> 
+                  <li> <a href="javascript:void(0)"><i class="fa-solid fa-chart-line"></i> kegiatan <span class="fa fa-chevron-down"> </span ></a> 
                     <ul class="nav child_menu">
                       <li> <a href="index.php?page=kegiatan"> halaman kegiatan </a> </li>
                       <li> <a href="index.php?page=tambahKegiatan"> Tambah kegiatan </a> </li>
                     </ul>
                   </li>
-                  <li> <a href="javascript:void(0)"><i class="fa fa-bicycle"> </i> pesanan <span class="fa fa-chevron-down"> </span ></a> 
+                  <li> <a href="javascript:void(0)"><i class="fa-solid fa-cart-shopping "></i> pesanan <span class="fa fa-chevron-down"> </span ></a> 
                     <ul class="nav child_menu">
                       <li> <a href="index.php?page=pesanan"> pesanan </a> </li>
+                    </ul>
+                  </li>
+                  <li> <a href="javascript:void(0)"><i class="fa-solid fa-user"></i> member <span class="fa fa-chevron-down"> </span ></a> 
+                    <ul class="nav child_menu">
+                      <li> <a href="index.php?page=user"> user </a> </li>
+                      <li> <a href="index.php?page=admin"> admin </a> </li>
                     </ul>
                   </li>
                   
@@ -102,7 +108,7 @@ if(!isset($_SESSION['admin'])){
                   <a class="dropdown-item"  href="index.php?page=profile"> <i class="fa fa-user pull-right"></i> PROFILE</a>
                   <!-- <a class="dropdown-item"  href="index.php?page=register"><i class="fa fa-registered pull-right"></i> REGISTER</a> -->
                   <a class="dropdown-item"  href="../../index.php"><i class="fa fa-sign-out pull-right"></i> HALAMAN PENJUALAN</a>
-                  <a class="dropdown-item"  href="../../logout.php"><i class="fa fa-sign-out pull-right"></i> LOG OUT</a>
+                  <a class="dropdown-item"  href="../../logout.php?id=<?php echo $_SESSION['id_admin'];?>"><i class="fa fa-sign-out pull-right"></i> LOG OUT</a>
                 </div>
               </li>
             </ul>
@@ -129,14 +135,22 @@ if(!isset($_SESSION['admin'])){
                     include 'ubahKegiatan.php';
                 }
       		      break;
-
-                case 'ubahPesanan':
+                case 'ubahUser':
                   if(isset($_GET["page"]))
                   {
                       $id=$_GET["id"];
-                      include 'ubahPesanan.php';
+                      include 'ubahUser.php';
                   }
                   break;
+                
+              case 'ubahPesanan':
+                if(isset($_GET["page"]))
+                {
+                    $id=$_GET["id"];
+                    include 'ubahPesanan.php';
+                }
+                break;
+                
 
               case 'detailKegiatan':
                 if(isset($_GET['page']))
@@ -152,38 +166,43 @@ if(!isset($_SESSION['admin'])){
                   include 'detailDaftarKegiatan.php';
                 }
                 break;
+              case 'detailUser':
+                if(isset($_GET['page']))
+                {
+                  $id = $_GET['id_detail'];
+                  include 'userDetail.php';
+                }
+                break;
               case 'kegiatan':
                 include 'kegiatan.php';
                 break;
-              case 'profile':
-                include 'tampil/profile.php';
+              case 'user':
+                include 'user.php';
                 break;
                 case 'admin':
-                  include 'tampil/admin.php';
+                  include 'admin.php';
                   break;
+                  case 'adminDetail':
+                    include 'adminDetail.php';
+                    break;
+                    case 'ubahAdmin':
+                      include 'ubahAdmin.php';
+                      break;
+              case 'profile':
+                include 'profileAdmin.php';
+                break;
       	      case 'tambahKegiatan':
       		      include 'tambahKegiatan.php';
       		      break;
               case 'pesanan';
                 include 'daftarKegiatan.php';
                 break;
-              case 'pesanandibatalkan';
-                include 'crud/pesanandibatalkan.php';
-                break;
               case 'dashboard':
                 include 'dashboard.php';
                 break;
-              case 'register':
-                include 'form/register.php';
-                break;
-                
-              case 'datadiri':
-          		  # code...
-                include 'form/datadiri.php';
-                break;
               case 'home':
                 # code...
-                include 'tampil/profileperusahaan.php';
+                include 'profileperusahaan.php';
                 break;
               default:
 		            #code...

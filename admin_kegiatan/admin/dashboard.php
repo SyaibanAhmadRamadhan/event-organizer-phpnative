@@ -40,7 +40,7 @@ $hitung_user = mysqli_num_rows($user);
                     <div class="card-body-icon"><i class="fa fa-bicycle mr-2"> </i> </div>
                       <h5 class="card-title">JUMLAH PESANAN</h5>
                       <div class="display-4"><?php echo $hitung_daftar;?></div>
-                      <a href="index.php?page=sepeda"><p class="card-text text-white">Lihat Detail <i class="fas fa-angel-double-right ml-2"></i></p></a>
+                      <a href="index.php?page=pesanan"><p class="card-text text-white">Lihat Detail <i class="fas fa-angel-double-right ml-2"></i></p></a>
                     
                     </div>
                   </div>
@@ -51,7 +51,7 @@ $hitung_user = mysqli_num_rows($user);
                     <div class="card-body-icon"><i class="fa fa-user-edit mr-2"></i>  </i> </div>
                       <h5 class="card-title">JUMLAH USER</h5>
                       <div class="display-4"><?php echo $hitung_user;?></div>
-                      <a href="index.php?page=admin"><p class="card-text text-white">Lihat Detail <i class="fas fa-angel-double-right ml-2"></i></p></a>
+                      <a href="index.php?page=user"><p class="card-text text-white">Lihat Detail <i class="fas fa-angel-double-right ml-2"></i></p></a>
                     </div>
                   </div>
                 </div>

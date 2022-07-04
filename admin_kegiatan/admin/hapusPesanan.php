@@ -15,10 +15,10 @@ $id = $_GET['id'];
 $hapus = mysqli_query($koneksi,"DELETE FROM daftar WHERE id = $id");
 if($hapus){
     echo "<script>alert('data berhasil dihapus');
-    document.location.href='index.php?page=detailDaftarKegiatan';
+    document.location.href='index.php?page=pesanan';
     </script>";
 }else {
     echo "<script>alert('data gagal dihapus');
-    document.location.href='index.php?page=detailDaftarKegiatan';
+    document.location.href='index.php?page=pesanan';
     </script>";
 }

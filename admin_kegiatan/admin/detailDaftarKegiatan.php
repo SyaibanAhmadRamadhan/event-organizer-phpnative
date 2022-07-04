@@ -81,6 +81,10 @@ $daftar = mysqli_query($koneksi,"SELECT * FROM daftar WHERE id=$id");
                 <th>tanggal pelaksana seminar</th>
                 <td><?php echo $kegiatanArray['tanggal'];?></td>
             </tr>
+            <tr>
+                <th>tanggal pemesanan</th>
+                <td><?php echo $x['tanggal_daftar'];?></td>
+            </tr>
 
             <tr>
                 <th>alasan</th>

@@ -11,11 +11,12 @@ if (isset($_POST['login'])){
     if (password_verify($password,$usernameArray['password'])){
       $id = $usernameArray['id'];
       $role = $usernameArray['role'];
-        $updateUser = mysqli_query($koneksi,"UPDATE users SET last_login = current_timestamp WHERE id = $id");
+        $updateUser = mysqli_query($koneksi,"UPDATE users SET last_login = current_timestamp , status = 'login' WHERE id = $id");
         if ($role=='administrator'){
           $_SESSION['id_admin']=$usernameArray['id'];
           $_SESSION['email']=$email;
           $_SESSION['username_admin']=$usernameArray['username'];
+          $_SESSION['role']=$usernameArray['role'];
           $_SESSION['admin']=true;
           header("Location:admin_kegiatan/admin/index.php");
           exit;

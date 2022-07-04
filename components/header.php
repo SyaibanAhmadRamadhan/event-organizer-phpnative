@@ -17,7 +17,7 @@
           <li><a class="nav-link scrollto" href="index.php#blog">Blog</a></li>
           <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
             <li><a class="nav-link scrollto" href="pesanan.php"><?php echo $_SESSION['username']?></a></li>
-          <li><a class="getstarted scrollto" href="./logout.php">logout</a></li>
+          <li><a class="getstarted scrollto" href="./logout.php?id=<?php echo $_SESSION['id_user'];?>">logout</a></li>
           <?php } elseif (isset($_SESSION['admin'])) { ?>
             <li><a class="nav-link scrollto active" href="index.php#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="index.php#about">About</a></li>
@@ -26,7 +26,7 @@
           <li><a class="nav-link scrollto" href="index.php#blog">Blog</a></li>
           <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
           <li><a class="nav-link scrollto" href="./admin_kegiatan/admin/index.php">Hal Admin</a></li>
-            <li><a class="getstarted scrollto" href="logout.php">logout</a></li>
+            <li><a class="getstarted scrollto" href="logout.php?id=<?php echo $_SESSION['id_admin'];?>">logout</a></li>
             <?php } else { ?>
               <li><a class="nav-link scrollto active" href="index.php#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="index.php#about">About</a></li>

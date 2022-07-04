@@ -187,7 +187,7 @@ if(isset($_POST["submit"])){
                     <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" >foto</label><br>
                         <div class="col-md-6 col-sm-6">
-                            <input size="4" name="gambar" type="file" value="<img src=../img/<?=$sepeda['foto_flyer']?>">
+                            <input size="4" name="gambar" required type="file" value="<img src=../img/<?=$sepeda['foto_flyer']?>">
                             <br>
                         </div>
                     </div>

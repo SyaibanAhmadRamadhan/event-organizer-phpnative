@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jul 2022 pada 12.38
+-- Waktu pembuatan: 04 Jul 2022 pada 16.39
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -36,10 +36,6 @@ CREATE TABLE `daftar` (
   `kategori_peserta_id` int(11) NOT NULL,
   `nosertifikat` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data untuk tabel `daftar`
---
 
 -- --------------------------------------------------------
 
@@ -110,6 +106,11 @@ CREATE TABLE `kegiatan` (
 -- Dumping data untuk tabel `kegiatan`
 --
 
+INSERT INTO `kegiatan` (`id`, `judul`, `kapasitas`, `harga_tiket`, `tanggal`, `narasumber`, `tempat`, `pic`, `foto_flyer`, `deskripsi`, `jenis_id`) VALUES
+(22, '123', 12, 12, '2022-07-15', '123', '123', '12', '62c2fad9c2823.png', '12', 2),
+(23, '123', 12, 123, '2022-07-16', '123', '12', '123', '', '12', 3),
+(24, '123', 123, 123, '2022-07-15', '123', '123', '123', '62c2fb7a16988.png', '123', 4);
+
 -- --------------------------------------------------------
 
 --
@@ -123,7 +124,7 @@ CREATE TABLE `users` (
   `email` varchar(40) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `last_login` timestamp NULL DEFAULT NULL,
-  `status` smallint(6) DEFAULT NULL,
+  `status` char(20) DEFAULT NULL,
   `role` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -131,6 +132,8 @@ CREATE TABLE `users` (
 -- Dumping data untuk tabel `users`
 --
 
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `created_at`, `last_login`, `status`, `role`) VALUES
+(7, 'admin', '$2y$10$w8G42tpALH5GxLyKTTJJU.s3e7Y89Hsg8j6LigyFbgfJlXWZWKbRK', 'admin@gmail.com', '2022-07-03 15:51:34', '2022-07-04 14:28:22', 'login', 'administrator');
 
 --
 -- Indexes for dumped tables
@@ -179,7 +182,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `daftar`
 --
 ALTER TABLE `daftar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenis_kegiatan`
@@ -197,13 +200,13 @@ ALTER TABLE `kategori_peserta`
 -- AUTO_INCREMENT untuk tabel `kegiatan`
 --
 ALTER TABLE `kegiatan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

@@ -25,18 +25,13 @@ if(!isset($_SESSION['login'])){
 
     <table border="2" class="table table-striped jambo_table bulk_action">
         <tr>
-            <th>Nama Panjang   </th>
-            <td><?php echo $_SESSION['name'];?></td>
+            <th>username  </th>
+            <td><?php echo $_SESSION['username_admin'];?></td>
         </tr>
 
         <tr>
-            <th>Alamat  </th>
-            <td><?php echo $_SESSION['alamat'];?></td>
-        </tr>
-
-        <tr>
-            <th>Jenis Kelamin  </th>
-            <td><?php echo $_SESSION['hp'];?></td>
+            <th>role  </th>
+            <td><?php echo $_SESSION['role'];?></td>
         </tr>
 
         <tr>
@@ -44,15 +39,6 @@ if(!isset($_SESSION['login'])){
             <td><?php echo $_SESSION['email'];?></td>
         </tr>
 
-        <tr>
-            <th>Username  </th>
-            <td><?php echo $_SESSION['username'];?></td>
-        </tr>
-
-        <tr>
-            <th>Jenis Kelamin  </th>
-            <td><?php echo $_SESSION['gender'];?></td>
-        </tr>
     </table> 
 
     <!-- <a href="index.php?page=datadiri"class="btn btn-secondary btn-sm">Ubah Data Diri</a> -->

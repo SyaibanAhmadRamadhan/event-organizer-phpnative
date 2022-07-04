@@ -18,20 +18,23 @@ function upload(){
     if( !in_array($extensi, $daftar) ){
         echo "<script>
         alert('format file harus jpg jpeg png');
+        document.location.href='index.php?page=tambahKegiatan';
         </script>";
-        return false;
+        exit;
     }
     if($tipe_file != 'image/jpeg' && $tipe_file != "image/png" &&  $tipe_file != "image/jpg"){
         echo "<script>
         alert('yagn anda pilih bukan gambar');
+        document.location.href='index.php?page=tambahKegiatan';
         </script>";
-        return false;
+        exit;
     }
     if($ukuran_file > 2000000){
         echo "<script>
         alert('ukuran file tidak boleh lebih dari 2mb');
+        document.location.href='index.php?page=tambahKegiatan';
         </script>";
-        return false;
+        exit;
     }
     $nama_file_baru = uniqid();
     $nama_file_baru .= '.';
@@ -70,7 +73,7 @@ if(isset($_POST['submit'])){
 </style>
     <link rel="stylesheet" type="text/css" href="../assets/fontawesome-free-6.1.1-web/css/all.min.css">
     <div class="buton">
-<a href="index.php?page=sepeda"><i class="fa-solid fa-xmark fa-2x" data-toggle="tooltip" title="close"></i></a>
+<a href="index.php?page=tambah"><i class="fa-solid fa-xmark fa-2x" data-toggle="tooltip" title="close"></i></a>
 </div>
 
 
