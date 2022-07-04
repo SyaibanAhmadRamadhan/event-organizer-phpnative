@@ -39,6 +39,7 @@ function upload(){
 $kegiatan = mysqli_query($koneksi,"SELECT * FROM kegiatan WHERE id='$id'");
 $kegiatanArray = mysqli_fetch_assoc($kegiatan);
 if(isset($_POST["submit"])){
+    $id=$_GET["id"];
     $judul = $_POST['judul'];
     $kapasitas = $_POST['kapasitas'];
     $harga = $_POST["harga_tiket"];
@@ -60,7 +61,7 @@ if(isset($_POST["submit"])){
     pic = '$pic',
     foto_flyer='$foto',
     deskripsi = '$deskripsi',
-    jenis_id = $jenisKegiatan");
+    jenis_id = $jenisKegiatan WHERE id = $id");
 
     if ($update) {
         echo "

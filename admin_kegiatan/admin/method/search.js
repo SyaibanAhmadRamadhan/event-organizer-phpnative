@@ -1,6 +1,6 @@
-$(document).ready(function(){
+$(document).ready(function () {
     // event ketika keyword ditulis
-    $('#keyword').on('keyup',function(){
+    $('#keyword').on('keyup', function () {
         // munculin loding
         $('.loader').show();
 
@@ -8,10 +8,10 @@ $(document).ready(function(){
         // $('#container').load('../method/ajax/sepeda.php?keyword=' + $('#keyword').val());
 
         // get
-        $.get('method/sepeda.php?keyword=' + $('#keyword').val(), function(data){
+        $.get('method/kegiatanSearch.php?keyword=' + $('#keyword').val(), function (data) {
             $('#container').html(data);
             $('.loader').hide();
         });
-        
+
     });
 })

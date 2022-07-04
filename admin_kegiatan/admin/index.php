@@ -75,7 +75,6 @@ if(!isset($_SESSION['admin'])){
                   <li> <a href="javascript:void(0)"><i class="fa fa-bicycle"> </i> pesanan <span class="fa fa-chevron-down"> </span ></a> 
                     <ul class="nav child_menu">
                       <li> <a href="index.php?page=pesanan"> pesanan </a> </li>
-                      <li> <a href="index.php?page=pesanandibatalkan"> pesanan dibatalkan </a> </li>
                     </ul>
                   </li>
                   
@@ -131,11 +130,26 @@ if(!isset($_SESSION['admin'])){
                 }
       		      break;
 
+                case 'ubahPesanan':
+                  if(isset($_GET["page"]))
+                  {
+                      $id=$_GET["id"];
+                      include 'ubahPesanan.php';
+                  }
+                  break;
+
               case 'detailKegiatan':
                 if(isset($_GET['page']))
                 {
                   $id = $_GET['id_detail'];
                   include 'detailKegiatan.php';
+                }
+                break;
+              case 'detailDaftarKegiatan':
+                if(isset($_GET['page']))
+                {
+                  $id = $_GET['id_detail'];
+                  include 'detailDaftarKegiatan.php';
                 }
                 break;
               case 'kegiatan':
@@ -151,13 +165,13 @@ if(!isset($_SESSION['admin'])){
       		      include 'tambahKegiatan.php';
       		      break;
               case 'pesanan';
-                include 'crud/pesanan.php';
+                include 'daftarKegiatan.php';
                 break;
               case 'pesanandibatalkan';
                 include 'crud/pesanandibatalkan.php';
                 break;
               case 'dashboard':
-                include 'tampil/dashboard.php';
+                include 'dashboard.php';
                 break;
               case 'register':
                 include 'form/register.php';
@@ -173,7 +187,7 @@ if(!isset($_SESSION['admin'])){
                 break;
               default:
 		            #code...
-		            include 'home.php';
+		            include 'dashboard.php';
 		            break;
 
             }

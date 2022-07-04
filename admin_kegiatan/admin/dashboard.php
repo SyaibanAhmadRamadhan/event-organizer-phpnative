@@ -27,9 +27,9 @@ $hitung_user = mysqli_num_rows($user);
                     <!-- <img src="..." class="card-img-top" alt="..."> -->
                     <div class="card-body">
                     <div class="card-body-icon"><i class="fa fa-bicycle mr-2"> </i> </div>
-                      <h5 class="card-title">JUMLAH SEPEDA</h5>
+                      <h5 class="card-title">JUMLAH KEGIATAN</h5>
                       <div class="display-4"><?php echo $hitung;?></div>
-                      <a href="index.php?page=sepeda"><p class="card-text text-white">Lihat Detail <i class="fas fa-angel-double-right ml-2"></i></p></a>
+                      <a href="index.php?page=kegiatan"><p class="card-text text-white">Lihat Detail <i class="fas fa-angel-double-right ml-2"></i></p></a>
                     
                     </div>
                   </div>
