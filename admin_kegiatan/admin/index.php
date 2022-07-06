@@ -14,8 +14,14 @@ if(!isset($_SESSION['admin'])){
       position:fixed;
     }
     </style>
-    <title>Nusantara E-bike store</title>
-    <link rel="icon" href="../assets/images/sepeda.jpg" type="image/ico" />
+      <title>X-Tech</title>
+  <meta content="" name="description">
+
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../../assets/img/logo.png" rel="icon">
+  <link href="../../assets/img/logo.png" rel="apple-touch-icon">
 
     <!-- Bootstrap -->
     <link href="../assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">

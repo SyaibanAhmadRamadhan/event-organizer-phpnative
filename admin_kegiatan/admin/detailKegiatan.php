@@ -9,8 +9,14 @@ $kegiatan = mysqli_query($koneksi,"SELECT * FROM kegiatan WHERE id=$id");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="../assets/fontawesome-free-6.1.1-web/css/all.min.css">
+<meta content="" name="description">
+
+<meta content="" name="keywords">
+
+<!-- Favicons -->
+<link href="../../assets/img/logo.png" rel="icon">
+<link href="../../assets/img/logo.png" rel="apple-touch-icon">
+  <link rel="stylesheet" type="text/css" href="../assets/fontawesome-free-6.1.1-web/css/all.min.css">
     <style>
         .buton {
     float: right;

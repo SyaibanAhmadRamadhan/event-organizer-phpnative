@@ -10,15 +10,20 @@ if(!isset($_SESSION['login'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+<meta content="" name="description">
+
+<meta content="" name="keywords">
+
+<!-- Favicons -->
+<link href="../../assets/img/logo.png" rel="icon">
+<link href="../../assets/img/logo.png" rel="apple-touch-icon">
+  <link rel="stylesheet" type="text/css" href="../assets/fontawesome-free-6.1.1-web/css/all.min.css">
 </head>
 <body>
     <center><font size="6">PROFILE DATA</font></center>
 
     <table border="1" cellpadding="5" align="center">
-    <tr>
-        <th><center><img src=../img/admin/<?php echo $_SESSION['gambar'];?> width="120"></center></th>
-    </tr>
+
     </table>
 
     <br>
@@ -41,15 +46,5 @@ if(!isset($_SESSION['login'])){
 
     </table> 
 
-    <!-- <a href="index.php?page=datadiri"class="btn btn-secondary btn-sm">Ubah Data Diri</a> -->
-        
-    <!-- footer content -->
-    <!-- <footer> -->
-        <!-- <div class="pull-right"> -->
-            <!-- *Note : Jika Anda Mengubah Data Diri Otomatis LogOut -->
-        <!-- </div> -->
-        <!-- <div class="clearfix"></div> -->
-    <!-- </footer> -->
-    
 </body>
 </html>

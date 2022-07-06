@@ -31,7 +31,14 @@ $user = data("SELECT * FROM users WHERE role = 'administrator' && status = 'not 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+<title>X-Tech</title>
+  <meta content="" name="description">
+
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../../assets/img/logo.png" rel="icon">
+  <link href="../../assets/img/logo.png" rel="apple-touch-icon">
     <link rel="stylesheet" type="text/css" href="../assets/fontawesome-free-6.1.1-web/css/all.min.css">
    <style>
     .pagination {
@@ -150,8 +157,6 @@ $user = data("SELECT * FROM users WHERE role = 'administrator' && status = 'not 
                 </div>
     </div>
 </div>
-<script src="../assets/jquery331/jquery-3.3.1.min.js"></script>
-<script src="method/search.js"></script>
 </body>
 </html>
 

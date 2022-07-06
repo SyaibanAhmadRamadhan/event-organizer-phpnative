@@ -31,8 +31,14 @@ if(isset($_POST["submit"])){
     <!DOCTYPE html>
     <html lang="en">
     <head>
-        <title>Document</title>
-        <link rel="stylesheet" type="text/css" href="../assets/fontawesome-free-6.1.1-web/css/all.min.css">
+    <meta content="" name="description">
+
+<meta content="" name="keywords">
+
+<!-- Favicons -->
+<link href="../../assets/img/logo.png" rel="icon">
+<link href="../../assets/img/logo.png" rel="apple-touch-icon">
+  <link rel="stylesheet" type="text/css" href="../assets/fontawesome-free-6.1.1-web/css/all.min.css">
         <style>
         .buton {
     float: right;
@@ -85,8 +91,6 @@ if(isset($_POST["submit"])){
                     </div>
             </div>
         </div>
-
-    <script src="../method/js/rp.js"></script>
     </body>
     </html>
 

@@ -62,9 +62,13 @@ if(isset($_POST['order'])){
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Toko Sepeda</title>
-    <link rel="stylesheet" href="./css/pendaftaran.css">
-    <link href="assets/img/logo.png" rel="icon">
+    <title>X-Tech</title>
+  <meta content="" name="description">
+
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
   <link href="assets/img/logo.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
