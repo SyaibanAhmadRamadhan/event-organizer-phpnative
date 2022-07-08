@@ -20,8 +20,7 @@ $id_user = $_SESSION['id_user'];
   <link href="assets/img/logo.png" rel="apple-touch-icon">
     <!-- Bootstrap CSS -->
 
-    <link rel="stylesheet" href="./css/pesanan.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"> -->
+    <link rel="stylesheet" href="css/pesanan.css">
      <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
